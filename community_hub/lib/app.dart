@@ -3,7 +3,6 @@ import 'package:community_hub/app/splash/presentation/ui/screens/splash.dart';
 import 'package:community_hub/src/observers/navigation.dart';
 import 'package:community_hub/src/providers.dart';
 import 'package:community_hub/src/res/theme/theme.dart';
-import 'package:flutter/material.dart';
 
 import 'lib.dart';
 

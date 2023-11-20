@@ -15,13 +15,73 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    Login.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LoginScreen(),
+      );
+    },
+    Onboarding.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OnboardingScreen(),
+      );
+    },
+    Signup.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SignupScreen(),
+      );
+    },
     Splash.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SplashScreen(),
       );
-    }
+    },
   };
+}
+
+/// generated route for
+/// [LoginScreen]
+class Login extends PageRouteInfo<void> {
+  const Login({List<PageRouteInfo>? children})
+      : super(
+          Login.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'Login';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OnboardingScreen]
+class Onboarding extends PageRouteInfo<void> {
+  const Onboarding({List<PageRouteInfo>? children})
+      : super(
+          Onboarding.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'Onboarding';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignupScreen]
+class Signup extends PageRouteInfo<void> {
+  const Signup({List<PageRouteInfo>? children})
+      : super(
+          Signup.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'Signup';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
