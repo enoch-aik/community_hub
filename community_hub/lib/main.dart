@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:community_hub/lib.dart';
 
 import 'app.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
