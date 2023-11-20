@@ -13,4 +13,7 @@ class AppAssets {
   static const onboarding2 = '$_onboardingDir/onboarding2.png';
   static const onboarding3 = '$_onboardingDir/onboarding3.png';
 
+  //svg
+  static const googleSvg = '$_svgDir/google.svg';
+
 }
