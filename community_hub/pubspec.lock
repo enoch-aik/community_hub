@@ -97,6 +97,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.2"
+  community_hub_client:
+    dependency: "direct main"
+    description:
+      path: "../community_hub_client"
+      relative: true
+    source: path
+    version: "0.0.0"
   connectivity_plus:
     dependency: transitive
     description:
