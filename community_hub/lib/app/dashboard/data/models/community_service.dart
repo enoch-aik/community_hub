@@ -21,4 +21,15 @@ class CommunityService {
 
   static CommunityService seeAll =
       CommunityService(service: 'See All', imagePath: AppAssets.seeAllSvg);
+
+  static List<CommunityService> get cleaningServices => [
+        CommunityService(
+            service: 'Home Cleaning', imagePath: AppAssets.homeCleaningImg),
+        CommunityService(
+            service: 'Carpet Cleaning', imagePath: AppAssets.carpetCleaningImg),
+        CommunityService(
+            service: 'Wall Cleaning', imagePath: AppAssets.carpetCleaningImg),
+        CommunityService(
+            service: 'Home Cleaning', imagePath: AppAssets.homeCleaningImg),
+      ];
 }

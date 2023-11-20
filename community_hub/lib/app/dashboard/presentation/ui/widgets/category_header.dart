@@ -3,8 +3,13 @@ import 'package:community_hub/lib.dart';
 class CategoryHeader extends StatelessWidget {
   final String header;
   final void Function()? onTap;
+  final bool showActionButton;
 
-  const CategoryHeader({super.key, required this.header, this.onTap});
+  const CategoryHeader(
+      {super.key,
+      required this.header,
+      this.onTap,
+      this.showActionButton = true});
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +29,21 @@ class CategoryHeader extends StatelessWidget {
           fontSize: 18.sp,
         ),
         const Spacer(),
-        SizedBox(
-            height: 35.h,
-            child: OutlinedButton(
-                onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.r),
+        if (showActionButton)
+          SizedBox(
+              height: 35.h,
+              child: OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                    side: BorderSide(color: context.secondary, width: 0.5),
                   ),
-                  side: BorderSide(color: context.secondary, width: 0.5),
-                ),
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [Text('See all'), Icon(Icons.chevron_right)],
-                ))),
+                  child: const Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [Text('See all'), Icon(Icons.chevron_right)],
+                  ))),
       ],
     );
   }

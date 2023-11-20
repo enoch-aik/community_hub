@@ -4,7 +4,7 @@ class AppAssets {
   static const String _svgDir = 'assets/svg';
   static const String _imgDir = 'assets/images';
   static const String _onboardingDir = '$_imgDir/onboarding';
-  static const String _servicesDir = '$_imgDir/services_and_offer';
+  static const String _servicesDir = '$_imgDir/services_and_offers';
 
   static const logoSvg = '$_svgDir/logo.svg';
 

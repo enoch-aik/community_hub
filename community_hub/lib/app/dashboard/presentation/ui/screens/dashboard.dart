@@ -1,8 +1,12 @@
 import 'package:community_hub/app/dashboard/data/models/community_service.dart';
+import 'package:community_hub/app/dashboard/data/models/offer.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/widgets/category_header.dart';
+import 'package:community_hub/app/dashboard/presentation/ui/widgets/cleaning_service_card.dart';
+import 'package:community_hub/app/dashboard/presentation/ui/widgets/offer_card.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/widgets/search_textfield.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/widgets/service_card.dart';
 import 'package:community_hub/lib.dart';
+import 'package:community_hub/src/res/assets/assets.dart';
 
 @RoutePage(name: 'dashboard')
 class DashboardScreen extends HookConsumerWidget {
@@ -52,8 +56,55 @@ class DashboardScreen extends HookConsumerWidget {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 16.h),
+              child: const CategoryHeader(header: 'Cleaning Services'),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ...List.generate(4, (index) => index).map(
+                    (e) => Padding(
+                      padding: EdgeInsets.only(right: 16.w),
+                      child: CleaningServiceCard(
+                        service: CommunityService.cleaningServices[e],
+                        //onTap: () {},
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             ColSpacing(16.h),
-            CategoryHeader(header: 'Cleaning Services'),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ...List.generate(
+                    2,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(right: 16.w),
+                      child: OfferCard(offer: ServiceOffer.offers[index]),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 16.h),
+              child: const CategoryHeader(
+                header: 'Appliance Repair',
+                showActionButton: false,
+              ),
+            ),
+            Image.asset(
+              AppAssets.applianceRepairOfferImg,
+              width: double.maxFinite,
+              fit: BoxFit.fitWidth,
+              filterQuality: FilterQuality.high,
+            ),
+            ColSpacing(24.h),
           ],
         ),
       ),
