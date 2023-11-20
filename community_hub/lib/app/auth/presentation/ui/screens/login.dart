@@ -1,6 +1,8 @@
 import 'package:community_hub/core/validators/text_field_validators.dart';
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/res/assets/assets.dart';
+import 'package:community_hub/src/router/navigator.dart';
+import 'package:community_hub/src/router/router.dart';
 
 @RoutePage(name: 'login')
 class LoginScreen extends HookConsumerWidget {
@@ -80,7 +82,12 @@ class LoginScreen extends HookConsumerWidget {
           ColSpacing(24.h),
           SizedBox(
             width: double.maxFinite,
-            child: FilledButton(onPressed: () {}, child: const Text('Login')),
+            child: FilledButton(
+                onPressed: () {
+                  ///Log user in here
+                  AppNavigator.of(context).replace(const Dashboard());
+                },
+                child: const Text('Login')),
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 16.h),
