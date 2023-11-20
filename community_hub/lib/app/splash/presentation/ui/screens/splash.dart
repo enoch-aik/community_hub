@@ -1,6 +1,8 @@
+import 'package:auto_route/annotations.dart';
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/res/assets/svg/svg.dart';
 
+@RoutePage(name: 'splash')
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -11,8 +13,11 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: context.primary ,
-      body: Center(child: SvgPicture.asset(AppAssets.logoSvg),),
+    return Scaffold(
+      backgroundColor: context.primary,
+      body: Center(
+        child: SvgPicture.asset(AppAssets.logoSvg),
+      ),
     );
   }
 }
