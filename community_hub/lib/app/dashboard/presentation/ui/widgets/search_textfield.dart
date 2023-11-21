@@ -1,5 +1,8 @@
 import 'package:community_hub/app/dashboard/data/models/community_service.dart';
 import 'package:community_hub/lib.dart';
+import 'package:community_hub/src/mock/database/services.dart';
+import 'package:community_hub/src/router/navigator.dart';
+import 'package:community_hub/src/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -39,7 +42,7 @@ class ServiceSearchTextField extends StatelessWidget {
             child: DecoratedBox(
                 decoration: BoxDecoration(
                     color: context.primary,
-                    borderRadius: BorderRadius.circular(4.r)),
+                    borderRadius: BorderRadius.circular(6.r)),
                 child: Icon(
                   Icons.search,
                   color: context.onPrimary,
@@ -59,6 +62,40 @@ class ServiceSearchTextField extends StatelessWidget {
       },
       onSelected: (String selection) {
         controller.text = selection;
+        CommunityService service = CommunityService.getService(selection);
+        switch (service.type) {
+          case CommunityServiceType.ac:
+            AppNavigator.of(context).push(ServiceList(
+                workers: LocalDatabase.acRepair, title: 'AC Repair'));
+          case CommunityServiceType.beauty:
+            AppNavigator.of(context).push(
+                ServiceList(workers: LocalDatabase.beauty, title: 'Beauty'));
+          case CommunityServiceType.appliance:
+            AppNavigator.of(context).push(ServiceList(
+                workers: LocalDatabase.appliance, title: 'Appliance'));
+          case CommunityServiceType.painting:
+            AppNavigator.of(context).push(ServiceList(
+                workers: LocalDatabase.painting, title: 'Painting'));
+          case CommunityServiceType.cleaning:
+            AppNavigator.of(context).push(ServiceList(
+                workers: LocalDatabase.cleaning, title: 'Cleaning'));
+          case CommunityServiceType.plumbing:
+            AppNavigator.of(context).push(ServiceList(
+                workers: LocalDatabase.plumbing, title: 'Plumbing'));
+          case CommunityServiceType.electronics:
+            AppNavigator.of(context).push(ServiceList(
+                workers: LocalDatabase.electronics, title: 'Electronics'));
+          case CommunityServiceType.logistics:
+            AppNavigator.of(context).push(ServiceList(
+                workers: LocalDatabase.logistics, title: 'Logistics'));
+          case CommunityServiceType.salon:
+            AppNavigator.of(context).push(
+                ServiceList(workers: LocalDatabase.salon, title: 'Salon'));
+          case CommunityServiceType.none:
+            break;
+          case null:
+            break;
+        }
       },
     );
   }

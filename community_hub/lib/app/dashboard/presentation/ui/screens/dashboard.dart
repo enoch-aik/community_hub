@@ -7,6 +7,8 @@ import 'package:community_hub/app/dashboard/presentation/ui/widgets/search_textf
 import 'package:community_hub/app/dashboard/presentation/ui/widgets/service_card.dart';
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/res/assets/assets.dart';
+import 'package:community_hub/src/router/navigator.dart';
+import 'package:community_hub/src/router/router.dart';
 
 @RoutePage(name: 'dashboard')
 class DashboardScreen extends HookConsumerWidget {
@@ -16,11 +18,12 @@ class DashboardScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final searchController = useTextEditingController();
     return Scaffold(
-      appBar: AppBar(),
+     // appBar: AppBar(),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           children: [
+            ColSpacing(40.h),
             KText(
               'HELLO ENOCH! 👋',
               fontWeight: FontWeight.w500,
@@ -51,7 +54,10 @@ class DashboardScreen extends HookConsumerWidget {
                   ),
                   ServiceCard(
                     service: CommunityService.seeAll,
-                    onTap: () {},
+                    onTap: () {
+                      AppNavigator.of(context).push(const AllCategories());
+
+                    },
                   ),
                 ],
               ),

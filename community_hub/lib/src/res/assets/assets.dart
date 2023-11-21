@@ -5,6 +5,7 @@ class AppAssets {
   static const String _imgDir = 'assets/images';
   static const String _onboardingDir = '$_imgDir/onboarding';
   static const String _servicesDir = '$_imgDir/services_and_offers';
+  static const String _avatarDir = '$_imgDir/avatars';
 
   static const logoSvg = '$_svgDir/logo.svg';
 
@@ -25,6 +26,7 @@ class AppAssets {
   static const electronics = '$_svgDir/services/electronics.svg';
   static const logistics = '$_svgDir/services/logistics.svg';
   static const painting = '$_svgDir/services/painting.svg';
+  static const salon = '$_svgDir/services/salon.svg';
   static const plumbing = '$_svgDir/services/plumbing.svg';
   static const repair = '$_svgDir/services/repair.svg';
 
@@ -37,4 +39,19 @@ class AppAssets {
       '$_servicesDir/appliance_repair_offer.png';
   static const carpetCleaningImg = '$_servicesDir/carpet_cleaning.png';
   static const homeCleaningImg = '$_servicesDir/home_cleaning.png';
+
+ static String getAvatarImg(int index) {
+    if (index == 0 || index > 116) {
+      return '$_avatarDir/Number=1.png';
+    }
+    return '$_avatarDir/Number=$index.png';
+  }
+
+ static  List<String> getAllAvatarImg() {
+    List<String> images = [];
+    for (int i = 1; i < 117; i++) {
+      images.add('$_avatarDir/Number=$i.png');
+    }
+    return images;
+  }
 }
