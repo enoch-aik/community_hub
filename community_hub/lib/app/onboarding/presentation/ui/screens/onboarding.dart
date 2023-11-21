@@ -3,6 +3,8 @@ import 'package:community_hub/app/onboarding/presentation/ui/widgets/onboarding_
 import 'package:community_hub/app/onboarding/presentation/ui/widgets/page_indicator.dart';
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/res/assets/assets.dart';
+import 'package:community_hub/src/router/navigator.dart';
+import 'package:community_hub/src/router/router.dart';
 
 @RoutePage(name: 'onboarding')
 class OnboardingScreen extends StatefulWidget {
@@ -42,13 +44,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         currentPage = index;
                       });
                     },
-                    itemBuilder: (context, index) =>
-                        AnimatedScale(
-                          scale: currentPage == index ? 1.0 : 0.2,
-                          duration: const Duration(milliseconds: 400),
-                          child: OnboardingItem(
-                              model: OnboardingModel.appOnboarding[index]),
-                        ),
+                    itemBuilder: (context, index) => AnimatedScale(
+                      scale: currentPage == index ? 1.0 : 0.2,
+                      duration: const Duration(milliseconds: 400),
+                      child: OnboardingItem(
+                          model: OnboardingModel.appOnboarding[index]),
+                    ),
                   ),
                 ),
                 OnBoardingPageIndicator(
@@ -90,7 +91,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         color: context.background,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
         width: double.maxFinite,
-        child: FilledButton(onPressed: () {}, child: Text('Get Started')),
+        child: FilledButton(
+            onPressed: () {
+              AppNavigator.of(context).replace(Login());
+            },
+            child: const Text('Get Started')),
       ),
     );
   }

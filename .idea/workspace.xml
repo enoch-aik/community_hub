@@ -2,11 +2,130 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79c4496e-e1b6-4043-80a5-a1e3bbcbf13b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/community_hub_client/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community_hub_client/.idea/community_hub_client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community_hub_client/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community_hub_client/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community_hub_client/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=106.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=107.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=108.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=109.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=112.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=113.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=115.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=116.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=53.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=55.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=56.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=58.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=59.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=60.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=61.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=62.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=63.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=65.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=67.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=68.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=69.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=70.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=71.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=73.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=74.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=76.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=77.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=78.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=79.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=80.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=81.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=82.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=83.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=84.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=85.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=86.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=87.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=88.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=89.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=90.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=91.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=92.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=93.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=94.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=95.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=97.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=98.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/assets/images/avatars/Number=99.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community_hub/lib/app/dashboard/presentation/ui/screens/all_categories.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community_hub/lib/app/dashboard/data/models/community_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/community_hub/lib/app/dashboard/data/models/community_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community_hub/lib/app/dashboard/presentation/ui/screens/dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/community_hub/lib/app/dashboard/presentation/ui/screens/dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community_hub/lib/app/dashboard/presentation/ui/widgets/search_textfield.dart" beforeDir="false" afterPath="$PROJECT_DIR$/community_hub/lib/app/dashboard/presentation/ui/widgets/search_textfield.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community_hub/lib/src/router/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/community_hub/lib/src/router/router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community_hub/lib/src/router/router.gr.dart" beforeDir="false" afterPath="$PROJECT_DIR$/community_hub/lib/src/router/router.gr.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community_hub/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/community_hub/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +158,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "feature-dashboard",
     "last_opened_file_path": "/Users/enochaikpokpodion/IdeaProjects/community_hub",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
@@ -56,6 +175,7 @@
       <workItem from="1700494506882" duration="44000" />
       <workItem from="1700494623172" duration="19000" />
       <workItem from="1700494688942" duration="21000" />
+      <workItem from="1700559980126" duration="22000" />
     </task>
     <servers />
   </component>

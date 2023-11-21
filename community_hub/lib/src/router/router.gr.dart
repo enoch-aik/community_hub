@@ -15,6 +15,18 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AllCategories.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AllCategoriesScreen(),
+      );
+    },
+    Dashboard.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DashboardScreen(),
+      );
+    },
     Login.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -25,6 +37,17 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const OnboardingScreen(),
+      );
+    },
+    ServiceList.name: (routeData) {
+      final args = routeData.argsAs<ServiceListArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ServiceListScreen(
+          key: args.key,
+          workers: args.workers,
+          title: args.title,
+        ),
       );
     },
     Signup.name: (routeData) {
@@ -40,6 +63,34 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AllCategoriesScreen]
+class AllCategories extends PageRouteInfo<void> {
+  const AllCategories({List<PageRouteInfo>? children})
+      : super(
+          AllCategories.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AllCategories';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [DashboardScreen]
+class Dashboard extends PageRouteInfo<void> {
+  const Dashboard({List<PageRouteInfo>? children})
+      : super(
+          Dashboard.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'Dashboard';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -68,6 +119,48 @@ class Onboarding extends PageRouteInfo<void> {
   static const String name = 'Onboarding';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ServiceListScreen]
+class ServiceList extends PageRouteInfo<ServiceListArgs> {
+  ServiceList({
+    Key? key,
+    required List<Worker> workers,
+    required String title,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ServiceList.name,
+          args: ServiceListArgs(
+            key: key,
+            workers: workers,
+            title: title,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ServiceList';
+
+  static const PageInfo<ServiceListArgs> page = PageInfo<ServiceListArgs>(name);
+}
+
+class ServiceListArgs {
+  const ServiceListArgs({
+    this.key,
+    required this.workers,
+    required this.title,
+  });
+
+  final Key? key;
+
+  final List<Worker> workers;
+
+  final String title;
+
+  @override
+  String toString() {
+    return 'ServiceListArgs{key: $key, workers: $workers, title: $title}';
+  }
 }
 
 /// generated route for
