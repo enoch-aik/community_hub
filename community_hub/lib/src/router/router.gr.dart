@@ -27,10 +27,22 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const BookServiceScreen(),
       );
     },
+    ClientBooking.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ClientBookingScreen(),
+      );
+    },
     Dashboard.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const DashboardScreen(),
+      );
+    },
+    Home.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomeScreen(),
       );
     },
     Login.name: (routeData) {
@@ -43,6 +55,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const OnboardingScreen(),
+      );
+    },
+    Profile.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProfileScreen(),
       );
     },
     ServiceDetails.name: (routeData) {
@@ -78,6 +96,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SplashScreen(),
       );
     },
+    WorkerBooking.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const WorkerBookingScreen(),
+      );
+    },
   };
 }
 
@@ -110,6 +134,20 @@ class BookService extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [ClientBookingScreen]
+class ClientBooking extends PageRouteInfo<void> {
+  const ClientBooking({List<PageRouteInfo>? children})
+      : super(
+          ClientBooking.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ClientBooking';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [DashboardScreen]
 class Dashboard extends PageRouteInfo<void> {
   const Dashboard({List<PageRouteInfo>? children})
@@ -119,6 +157,20 @@ class Dashboard extends PageRouteInfo<void> {
         );
 
   static const String name = 'Dashboard';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [HomeScreen]
+class Home extends PageRouteInfo<void> {
+  const Home({List<PageRouteInfo>? children})
+      : super(
+          Home.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'Home';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -147,6 +199,20 @@ class Onboarding extends PageRouteInfo<void> {
         );
 
   static const String name = 'Onboarding';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProfileScreen]
+class Profile extends PageRouteInfo<void> {
+  const Profile({List<PageRouteInfo>? children})
+      : super(
+          Profile.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'Profile';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -255,6 +321,20 @@ class Splash extends PageRouteInfo<void> {
         );
 
   static const String name = 'Splash';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [WorkerBookingScreen]
+class WorkerBooking extends PageRouteInfo<void> {
+  const WorkerBooking({List<PageRouteInfo>? children})
+      : super(
+          WorkerBooking.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'WorkerBooking';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

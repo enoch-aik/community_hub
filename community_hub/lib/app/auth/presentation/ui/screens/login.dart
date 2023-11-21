@@ -85,7 +85,7 @@ class LoginScreen extends HookConsumerWidget {
             child: FilledButton(
                 onPressed: () {
                   ///Log user in here
-                  AppNavigator.of(context).replace(const Dashboard());
+                  AppNavigator.of(context).replace(const Home());
                 },
                 child: const Text('Login')),
           ),
