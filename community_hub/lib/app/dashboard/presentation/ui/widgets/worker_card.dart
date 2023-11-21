@@ -12,20 +12,22 @@ class WorkerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Random random = Random();
-    return GestureDetector(
+    return InkWell(
+      splashFactory: NoSplash.splashFactory,borderRadius: BorderRadius.circular(16.r),
       onTap: onTap,
       child: Row(
         children: [
-          SizedBox(
-            width: 110.w,
-            height: 110.w,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(16.r),
+          Hero(
+            tag: 'profileImage${worker.id}',
+            child: SizedBox(
+              width: 110.w,
+              height: 110.w,
               child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.r),
-                  child: Image.asset(
-                    worker.profilePic!,
-                  )),
+                borderRadius: BorderRadius.circular(16.r),
+                child: Image.asset(
+                  worker.profilePic!,
+                ),
+              ),
             ),
           ),
           RowSpacing(16.w),

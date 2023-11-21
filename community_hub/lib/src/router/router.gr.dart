@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const AllCategoriesScreen(),
       );
     },
+    BookService.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BookServiceScreen(),
+      );
+    },
     Dashboard.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -85,6 +91,20 @@ class AllCategories extends PageRouteInfo<void> {
         );
 
   static const String name = 'AllCategories';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BookServiceScreen]
+class BookService extends PageRouteInfo<void> {
+  const BookService({List<PageRouteInfo>? children})
+      : super(
+          BookService.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BookService';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

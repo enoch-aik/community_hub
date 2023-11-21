@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/mock/database/services.dart';
+import 'package:community_hub/src/router/navigator.dart';
+import 'package:community_hub/src/router/router.dart';
 
 @RoutePage(name: 'serviceDetails')
 class ServiceDetailsScreen extends StatelessWidget {
@@ -30,16 +32,17 @@ class ServiceDetailsScreen extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                        width: 120.w,
-                        height: 120.w,
-                        decoration: BoxDecoration(
-                          color: context.primaryContainer,
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
+                    Hero(
+                      tag: 'profileImage${worker.id}',
+                      child: SizedBox(
+                        width: 110.w,
+                        height: 110.w,
                         child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.r),
-                            child: Image.asset(worker.profilePic!))),
+                          borderRadius: BorderRadius.circular(16.r),
+                          child: Image.asset(worker.profilePic!),
+                        ),
+                      ),
+                    ),
                     RowSpacing(16.w),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,7 +121,10 @@ class ServiceDetailsScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(bottom: 16.h, right: 16.w, left: 16.w),
           child: FilledButton(
-              onPressed: () {}, child: const Text('Book Appointment')),
+              onPressed: () {
+                AppNavigator.of(context).push(const BookService());
+              },
+              child: const Text('Book Now')),
         ),
       ),
     );
