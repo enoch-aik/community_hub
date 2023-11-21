@@ -3,6 +3,7 @@ import 'package:community_hub/app/auth/presentation/ui/screens/login.dart';
 import 'package:community_hub/app/auth/presentation/ui/screens/signup.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/screens/all_categories.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/screens/dashboard.dart';
+import 'package:community_hub/app/dashboard/presentation/ui/screens/services/service_details.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/screens/services/service_list.dart';
 import 'package:community_hub/app/onboarding/presentation/ui/screens/onboarding.dart';
 import 'package:community_hub/app/splash/presentation/ui/screens/splash.dart';
@@ -22,6 +23,8 @@ class AppRouter extends _$AppRouter {
         AutoRoute(path: '/dashboard', page: Dashboard.page),
         AutoRoute(path: '/allCategories', page: AllCategories.page),
         AutoRoute(path: '/serviceList', page: ServiceList.page),
+        AutoRoute(path: '/serviceDetails', page: ServiceDetails.page),
+
 
       ];
 

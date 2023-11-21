@@ -1,6 +1,8 @@
-import 'package:community_hub/app/dashboard/presentation/ui/widgets/service_list_card.dart';
+import 'package:community_hub/app/dashboard/presentation/ui/widgets/worker_card.dart';
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/mock/database/services.dart';
+import 'package:community_hub/src/router/navigator.dart';
+import 'package:community_hub/src/router/router.dart';
 
 @RoutePage(name: 'serviceList')
 class ServiceListScreen extends StatelessWidget {
@@ -21,20 +23,21 @@ class ServiceListScreen extends StatelessWidget {
       ),
       body: ListView.separated(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          itemBuilder: (context, index) => ServiceListCard(
+          itemBuilder: (context, index) => WorkerCard(
                 worker: workers[index],
-                onTap: () {},
+                onTap: () {
+                  AppNavigator.of(context)
+                      .push(ServiceDetails(worker: workers[index]));
+                },
               ),
-          separatorBuilder: (context, index) => ColSpacing(8.h),
+          separatorBuilder: (context, index) => Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.h),
+                child: const Divider(
+                  height: 0,
+                ),
+              ),
           itemCount: workers.length)
 
-      /*ListView(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        children: [
-          ...List.generate(workers.length,
-              (index) => ServiceListCard(worker: workers[index]))
-        ],
-      )*/
       ,
     );
   }

@@ -39,6 +39,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnboardingScreen(),
       );
     },
+    ServiceDetails.name: (routeData) {
+      final args = routeData.argsAs<ServiceDetailsArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ServiceDetailsScreen(
+          key: args.key,
+          worker: args.worker,
+        ),
+      );
+    },
     ServiceList.name: (routeData) {
       final args = routeData.argsAs<ServiceListArgs>();
       return AutoRoutePage<dynamic>(
@@ -119,6 +129,44 @@ class Onboarding extends PageRouteInfo<void> {
   static const String name = 'Onboarding';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ServiceDetailsScreen]
+class ServiceDetails extends PageRouteInfo<ServiceDetailsArgs> {
+  ServiceDetails({
+    Key? key,
+    required Worker worker,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ServiceDetails.name,
+          args: ServiceDetailsArgs(
+            key: key,
+            worker: worker,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ServiceDetails';
+
+  static const PageInfo<ServiceDetailsArgs> page =
+      PageInfo<ServiceDetailsArgs>(name);
+}
+
+class ServiceDetailsArgs {
+  const ServiceDetailsArgs({
+    this.key,
+    required this.worker,
+  });
+
+  final Key? key;
+
+  final Worker worker;
+
+  @override
+  String toString() {
+    return 'ServiceDetailsArgs{key: $key, worker: $worker}';
+  }
 }
 
 /// generated route for
