@@ -1,6 +1,7 @@
 import 'package:community_hub/src/res/assets/assets.dart';
+import 'package:equatable/equatable.dart';
 
-class CommunityService {
+class CommunityService extends Equatable {
   final String service;
   final String imagePath;
   final CommunityServiceType? type;
@@ -8,7 +9,8 @@ class CommunityService {
   CommunityService(
       {required this.service, required this.imagePath, required this.type});
 
-  static CommunityService getService(String title) => services.where((element) => element.service == title).first;
+  static CommunityService getService(String title) =>
+      services.where((element) => element.service == title).first;
 
   static List<CommunityService> get services => [
         CommunityService(
@@ -72,6 +74,9 @@ class CommunityService {
             imagePath: AppAssets.homeCleaningImg,
             type: CommunityServiceType.cleaning),
       ];
+
+  @override
+  List<Object?> get props => [service, imagePath, type];
 }
 
 enum CommunityServiceType {

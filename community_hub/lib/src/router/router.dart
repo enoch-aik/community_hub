@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:community_hub/app/auth/presentation/ui/screens/login.dart';
-import 'package:community_hub/app/auth/presentation/ui/screens/signup.dart';
+import 'package:community_hub/app/auth/presentation/ui/screens/screens.dart';
 import 'package:community_hub/app/bookings/presentation/ui/screens/screens.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/screens/all_categories.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/screens/dashboard.dart';
@@ -23,7 +22,8 @@ class AppRouter extends _$AppRouter {
         AutoRoute(path: '/', page: Splash.page, initial: true),
         AutoRoute(path: '/onboarding', page: Onboarding.page),
         AutoRoute(path: '/login', page: Login.page),
-        AutoRoute(path: '/signup', page: Signup.page),
+        AutoRoute(path: '/clientSignup', page: ClientSignup.page),
+        AutoRoute(path: '/workerSignup', page: WorkerSignup.page),
         AutoRoute(path: '/dashboard', page: Dashboard.page),
         AutoRoute(path: '/allCategories', page: AllCategories.page),
         AutoRoute(path: '/serviceList', page: ServiceList.page),

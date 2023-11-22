@@ -18,7 +18,7 @@ abstract class AuthDataSource {
   Future<UserCredential> signUpWithEmailAndPassword(NewClient user);
 
   ///auth for doctor
-  Future<UserCredential> workerSignUp(NewWorker doctor);
+  Future<UserCredential> workerSignUp(NewWorker worker);
 
   /// loqin for doctor
   Future<UserCredential> workerLogin(UserCred user);

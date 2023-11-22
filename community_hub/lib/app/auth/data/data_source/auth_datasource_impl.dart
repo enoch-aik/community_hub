@@ -60,9 +60,9 @@ class AuthDataSourceImpl extends AuthDataSource {
   }
 
   @override
-  Future<UserCredential> workerSignUp(NewWorker doctor) async {
+  Future<UserCredential> workerSignUp(NewWorker worker) async {
     return await auth.createUserWithEmailAndPassword(
-        email: doctor.emailAddress, password: doctor.password);
+        email: worker.emailAddress, password: worker.password);
   }
 
   @override

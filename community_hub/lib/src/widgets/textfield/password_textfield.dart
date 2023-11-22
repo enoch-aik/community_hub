@@ -18,7 +18,9 @@ class PasswordTextField extends HookWidget {
       this.hint,
       this.helperText,
       this.emptyTextError,
-      this.validator,this.minTextLength = 6,this.autofillHints,
+      this.validator,
+      this.minTextLength = 6,
+      this.autofillHints,
       this.isSignUp = false})
       : super(key: key);
 
@@ -57,7 +59,7 @@ class PasswordTextField extends HookWidget {
                       : Icons.visibility_off_rounded),
                 ))),
         SizedBox(
-          height: 24.h,
+          height: 16.h,
         ),
         if (isSignUp)
           TextFormField(
