@@ -1,3 +1,4 @@
+import 'package:community_hub/core/services/notification/notification.dart';
 import 'package:community_hub/lib.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -45,5 +46,12 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   auth = FirebaseAuth.instanceFor(app: app);
+  // handle background notification
+  FirebaseMessaging.onBackgroundMessage(_backgroundHandler);
+  //initialize notification service and check for initial message, background message and foreground message
+  NotificationService.initialize();
+  await NotificationService.requestPermission();
+
   runApp(const ProviderScope(child: MyApp()));
+
 }
