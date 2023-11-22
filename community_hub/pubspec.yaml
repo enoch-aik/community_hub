@@ -74,9 +74,19 @@ dependencies:
   freezed: ^2.3.5
   skeletonizer: ^0.7.0
 
+  #firebase
+  firebase_core: ^2.15.1
+  firebase_auth: ^4.9.0
+  cloud_firestore: ^4.9.1
+  google_sign_in: ^6.1.5
+  equatable: ^2.0.5
+
 
   #encryptoion and unique ID
   uuid: ^3.0.7
+
+  booking_calendar:
+    path: ../../doctor_booking/doctor_booking_flutter/booking_calendar
 
   #others
   decimal: ^2.3.3
@@ -128,6 +138,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: BottomNavIcons
+      fonts:
+        - asset: assets/fonts/BottomNavIcons.ttf
     - family: Gelion
       fonts:
         - asset: assets/fonts/Gelion-Light.ttf

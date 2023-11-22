@@ -2,11 +2,12 @@ import 'package:community_hub/core/service_exceptions/service_exception.dart';
 import 'package:community_hub/core/service_result/service_result.dart';
 import 'package:community_hub_client/community_hub_client.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 typedef TypeDef = Function();
 
-Future<ApiResult<T>> dioInterceptor<T>(TypeDef func) async {
+Future<ApiResult<T>> apiInterceptor<T>(TypeDef func) async {
   try {
     final result = await func();
     return ApiResult.success(data: result);
@@ -16,7 +17,18 @@ Future<ApiResult<T>> dioInterceptor<T>(TypeDef func) async {
     return ApiResult.apiFailure(
         error: ApiExceptions.defaultError(exception.message),
         statusCode: exception.statusCode);
-  } on DioException catch (exception) {
+  }
+
+  on FirebaseAuthException catch (exception) {
+    return ApiResult.apiFailure(
+        error: ApiExceptions.defaultError(
+            exception.message ?? 'Unexpected error occurred'),
+        statusCode: -1);
+  }
+  on FirebaseException catch (exception){
+    return ApiResult.apiFailure(error: ApiExceptions.defaultError(exception.message??'Unexpected error occurred'));
+  }
+  on DioException catch (exception) {
     // log(exception.response.toString());
     return exception.response?.statusCode == 400 ||
             exception.response?.data['message'] != null
