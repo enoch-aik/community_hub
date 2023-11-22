@@ -31,6 +31,7 @@ Design Credit: (https://www.figma.com/file/5fsoomMbg1nbIkBgsFeDaD/DoorHub-UI-KIt
 ## 📱 Features:
 - ### Client
 - [ ] Google Maps
+- [ ] In-app purchase
 - [ ] App Wallet
 - [ ] View Profile
 - [ ] View Settings
