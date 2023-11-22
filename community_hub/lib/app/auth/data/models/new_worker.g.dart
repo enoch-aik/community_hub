@@ -15,7 +15,7 @@ NewWorker _$NewWorkerFromJson(Map<String, dynamic> json) => NewWorker(
               .toList() ??
           const [],
       isApproved: json['isApproved'] as bool? ?? false,
-      speciality: json['speciality'] as String,
+      service: json['service'] as String,
       fcmToken: json['fcmToken'] as String?,
       userId: json['userId'] as String?,
     );
@@ -25,7 +25,7 @@ Map<String, dynamic> _$NewWorkerToJson(NewWorker instance) => <String, dynamic>{
       'emailAddress': instance.emailAddress,
       'password': instance.password,
       'userId': instance.userId,
-      'speciality': instance.speciality,
+      'service': instance.service,
       'isApproved': instance.isApproved,
       'appointments': instance.appointments,
       'fcmToken': instance.fcmToken,

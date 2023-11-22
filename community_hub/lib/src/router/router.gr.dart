@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AcRepairServiceList.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AcRepairServiceListScreen(),
+      );
+    },
     AllCategories.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -22,9 +28,13 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     BookService.name: (routeData) {
+      final args = routeData.argsAs<BookServiceArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const BookServiceScreen(),
+        child: BookServiceScreen(
+          key: args.key,
+          worker: args.worker,
+        ),
       );
     },
     ClientBooking.name: (routeData) {
@@ -112,6 +122,20 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
+/// [AcRepairServiceListScreen]
+class AcRepairServiceList extends PageRouteInfo<void> {
+  const AcRepairServiceList({List<PageRouteInfo>? children})
+      : super(
+          AcRepairServiceList.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AcRepairServiceList';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [AllCategoriesScreen]
 class AllCategories extends PageRouteInfo<void> {
   const AllCategories({List<PageRouteInfo>? children})
@@ -127,16 +151,39 @@ class AllCategories extends PageRouteInfo<void> {
 
 /// generated route for
 /// [BookServiceScreen]
-class BookService extends PageRouteInfo<void> {
-  const BookService({List<PageRouteInfo>? children})
-      : super(
+class BookService extends PageRouteInfo<BookServiceArgs> {
+  BookService({
+    Key? key,
+    required LocalDbWorker worker,
+    List<PageRouteInfo>? children,
+  }) : super(
           BookService.name,
+          args: BookServiceArgs(
+            key: key,
+            worker: worker,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'BookService';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<BookServiceArgs> page = PageInfo<BookServiceArgs>(name);
+}
+
+class BookServiceArgs {
+  const BookServiceArgs({
+    this.key,
+    required this.worker,
+  });
+
+  final Key? key;
+
+  final LocalDbWorker worker;
+
+  @override
+  String toString() {
+    return 'BookServiceArgs{key: $key, worker: $worker}';
+  }
 }
 
 /// generated route for
@@ -242,7 +289,7 @@ class Profile extends PageRouteInfo<void> {
 class ServiceDetails extends PageRouteInfo<ServiceDetailsArgs> {
   ServiceDetails({
     Key? key,
-    required Worker worker,
+    required LocalDbWorker worker,
     List<PageRouteInfo>? children,
   }) : super(
           ServiceDetails.name,
@@ -267,7 +314,7 @@ class ServiceDetailsArgs {
 
   final Key? key;
 
-  final Worker worker;
+  final LocalDbWorker worker;
 
   @override
   String toString() {
@@ -280,7 +327,7 @@ class ServiceDetailsArgs {
 class ServiceList extends PageRouteInfo<ServiceListArgs> {
   ServiceList({
     Key? key,
-    required List<Worker> workers,
+    required List<LocalDbWorker> workers,
     required String title,
     List<PageRouteInfo>? children,
   }) : super(
@@ -307,7 +354,7 @@ class ServiceListArgs {
 
   final Key? key;
 
-  final List<Worker> workers;
+  final List<LocalDbWorker> workers;
 
   final String title;
 

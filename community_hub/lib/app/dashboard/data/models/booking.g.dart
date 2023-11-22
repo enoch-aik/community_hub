@@ -13,7 +13,7 @@ Booking _$BookingFromJson(Map<String, dynamic> json) => Booking(
       clientId: json['clientId'] as String?,
       clientName: json['clientName'] as String?,
       workerEmail: json['workerEmail'] as String?,
-      workerId: json['workerId'] as String?,
+      workerId: json['workerId'] as int?,
       clientEmail: json['clientEmail'] as String?,
       workerName: json['workerName'] as String?,
       service: json['service'] as String?,

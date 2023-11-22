@@ -116,7 +116,7 @@ class WorkerSignupScreen extends HookConsumerWidget {
                         emailAddress: emailController.text,
                         password: passwordController.text,
                         fcmToken: '',
-                        speciality: service.value!.service);
+                        service: service.value!.service);
 
                     final result = await auth.workerSignUp(worker);
 

@@ -6,7 +6,7 @@ import 'package:community_hub/src/router/router.dart';
 
 @RoutePage(name: 'serviceList')
 class ServiceListScreen extends StatelessWidget {
-  final List<Worker> workers;
+  final List<LocalDbWorker> workers;
   final String title;
 
   const ServiceListScreen(

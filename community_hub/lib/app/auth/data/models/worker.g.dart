@@ -9,7 +9,7 @@ part of 'worker.dart';
 Worker _$WorkerFromJson(Map<String, dynamic> json) => Worker(
       fullName: json['fullName'] as String,
       emailAddress: json['emailAddress'] as String,
-      appointments: (json['appointments'] as List<dynamic>?)
+      bookings: (json['bookings'] as List<dynamic>?)
               ?.map((e) => Booking.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -24,7 +24,7 @@ Map<String, dynamic> _$WorkerToJson(Worker instance) => <String, dynamic>{
       'emailAddress': instance.emailAddress,
       'userId': instance.userId,
       'service': instance.service,
-      'appointments': instance.appointments.map((e) => e.toJson()).toList(),
+      'bookings': instance.bookings.map((e) => e.toJson()).toList(),
       'isApproved': instance.isApproved,
       'fcmToken': instance.fcmToken,
     };

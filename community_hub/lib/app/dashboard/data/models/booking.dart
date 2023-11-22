@@ -10,7 +10,7 @@ class Booking extends Equatable {
   /// The generated code assumes these values exist in JSON.
   final String? clientId;
   final String? clientName;
-  final String? workerId;
+  final int? workerId;
   final String? clientEmail;
   final bool? valid;
   final String? workerName;

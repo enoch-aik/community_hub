@@ -36,9 +36,7 @@ class AllCategoriesScreen extends StatelessWidget {
                           onTap: () async {
                             switch (e.value.type) {
                               case CommunityServiceType.ac:
-                                AppNavigator.of(context).push(ServiceList(
-                                    workers: LocalDatabase.acRepair,
-                                    title: 'AC Repair'));
+                                AppNavigator.of(context).push(const AcRepairServiceList());
                               case CommunityServiceType.beauty:
                                 AppNavigator.of(context).push(ServiceList(
                                     workers: LocalDatabase.beauty,

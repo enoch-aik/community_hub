@@ -55,11 +55,7 @@ class DashboardScreen extends HookConsumerWidget {
                       onTap: () {
                         if (CommunityService.services[e].type ==
                             CommunityServiceType.ac) {
-                          AppNavigator.of(context).push(
-                            ServiceList(
-                                workers: LocalDatabase.acRepair,
-                                title: 'AC Repair'),
-                          );
+                          AppNavigator.of(context).push(const AcRepairServiceList());
                         } else if (CommunityService.services[e].type ==
                             CommunityServiceType.beauty) {
                           AppNavigator.of(context).push(

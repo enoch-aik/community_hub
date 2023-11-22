@@ -80,6 +80,7 @@ dependencies:
   cloud_firestore: ^4.9.1
   google_sign_in: ^6.1.5
   equatable: ^2.0.5
+  add_2_calendar: ^2.2.5
 
 
   #encryptoion and unique ID
