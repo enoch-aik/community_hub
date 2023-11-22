@@ -4,33 +4,13 @@
 ## Fun-fact 🤩: This project was developed in 3 days.
 
 
-## Getting Started
-
-This project is a starting point for a Flutter application that is using
-Serverpod.
-
-A great starting point for learning Serverpod is our documentation site at:
-[https://docs.serverpod.dev](https://docs.serverpod.dev).
-
-Don't forget to check out the Serverpod Flutter package at:
-[https://pub.dev/packages/serverpod](https://pub.dev/packages/serverpod).
-
-
-
-To run the project, first make sure that the server is running, then do:
-
-    cd community_hub_flutter
-    flutter run
-    
-
-
 Design Credit: (https://www.figma.com/file/5fsoomMbg1nbIkBgsFeDaD/DoorHub-UI-KIt--Figma-Community-(Community))
-
 
 
 ## 📱 Features:
 - ### Client
 - [ ] Google Maps
+- [ ] In-app purchase
 - [ ] App Wallet
 - [ ] View Profile
 - [ ] View Settings
@@ -108,16 +88,21 @@ Design Credit: (https://www.figma.com/file/5fsoomMbg1nbIkBgsFeDaD/DoorHub-UI-KIt
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application that is using
+Serverpod.
 
-A few resources to get you started if this is your first Flutter project:
+A great starting point for learning Serverpod is our documentation site at:
+[https://docs.serverpod.dev](https://docs.serverpod.dev).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Don't forget to check out the Serverpod Flutter package at:
+[https://pub.dev/packages/serverpod](https://pub.dev/packages/serverpod).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+To run the project, first make sure that the server is running, then do:
+
+    cd community_hub_flutter
+    flutter run
 
 ## How to use
 
@@ -125,7 +110,7 @@ samples, guidance on mobile development, and a full API reference.
 
 Download or clone this repo by using the link below
 ```
-https://github.com/enoch-aik/community_hub
+https://github.com/enoch-aik/community_hub.git
 ```
 
 **Step 2**
