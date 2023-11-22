@@ -12,14 +12,14 @@ class NewWorker {
   String? userId;
   final String service;
   final bool isApproved;
-  final List<Booking> appointments;
+  final List<Booking> bookings;
   final String? fcmToken;
 
   NewWorker(
       {required this.fullName,
       required this.emailAddress,
       required this.password,
-      this.appointments = const [],
+      this.bookings = const [],
       this.isApproved = false,
       required this.service,
       this.fcmToken,

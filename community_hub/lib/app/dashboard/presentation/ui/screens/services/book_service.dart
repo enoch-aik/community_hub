@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:community_hub/app/auth/data/models/worker.dart';
 import 'package:community_hub/app/dashboard/data/models/booking.dart';
 import 'package:community_hub/app/dashboard/providers.dart';
@@ -24,10 +26,13 @@ class BookServiceScreen extends HookConsumerWidget {
       if (!worker.fromLocalDb!) {
         return Stream.value(worker);
       }
+
       return Stream.value([]);
     }
 
     Future<dynamic> uploadBooking({required BookingService newBooking}) async {
+      log('${worker.bookings}');
+      Loader.show(context);
       Booking booking = Booking(
           bookingStart: newBooking.bookingStart,
           bookingEnd: newBooking.bookingEnd,
@@ -40,6 +45,7 @@ class BookServiceScreen extends HookConsumerWidget {
           clientName: currentUser.displayName ?? currentUser.email);
       final result = await ref.read(bookingRepoProvider).bookService(
           booking: booking, worker: worker, clientEmail: currentUser.email!);
+      Loader.hide(context);
       result.when(success: (data) {
         //go to home screen
         AutoRouter.of(context).popUntilRoot();
@@ -84,7 +90,8 @@ class BookServiceScreen extends HookConsumerWidget {
 
     List<DateTimeRange> convertStreamResult({required dynamic streamResult}) {
       //if the result is doctor and not null, show the doctor's schedule, else show an empty schedule
-      if (streamResult is Worker) {
+
+      if (streamResult is LocalDbWorker) {
         converted = streamResult.scheduleRangeList.toList();
         return streamResult.scheduleRangeList;
       } else {
@@ -112,6 +119,8 @@ class BookServiceScreen extends HookConsumerWidget {
         pauseSlotColor: context.outlineVariant,
         availableSlotColor: context.primary,
         availableSlotTextStyle:
+            const TextStyle().copyWith(color: context.onPrimary),
+        bookedSlotTextStyle:
             const TextStyle().copyWith(color: context.onPrimary),
         pauseSlots: const [],
         //get120Days(),

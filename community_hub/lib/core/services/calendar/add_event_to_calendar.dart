@@ -5,8 +5,7 @@ class CalendarService {
   Future<bool> addToCalendar({required Booking booking}) async {
     return await Add2Calendar.addEvent2Cal(
       Event(
-          title:
-              'Appointment with Dr. ${booking.workerName} (${booking.service})',
+          title: 'Appointment with ${booking.workerName} (${booking.service})',
           startDate: booking.bookingStart!,
           endDate: booking.bookingEnd!,
           iosParams: const IOSParams(reminder: Duration(minutes: 30))),

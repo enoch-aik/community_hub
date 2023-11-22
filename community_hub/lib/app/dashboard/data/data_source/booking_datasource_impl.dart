@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:community_hub/app/auth/data/models/client.dart';
 import 'package:community_hub/app/dashboard/data/models/booking.dart';
@@ -29,13 +31,13 @@ class BookingDataSourceImpl extends BookingDataSource {
         firestore.collection('clients').doc(clientEmail);
 
     Client client = await firebaseApi.getClientData(clientEmail);
-    await clientDbRef.update({
-      'appointments':
-          [booking, ...client.bookings].map((e) => e.toJson()).toList()
-    });
+  //  log('${client.bookings}');
+    List<Booking> newClientBooking = [...client.bookings, booking];
+   // log('$newClientBooking');
+    await clientDbRef
+        .update({'bookings': newClientBooking.map((e) => e.toJson()).toList()});
     await workerDbRef.update({
-      'appointments':
-          [booking, ...?worker.bookings].map((e) => e.toJson()).toList()
+      'bookings': [...worker.bookings!, booking].map((e) => e.toJson()).toList()
     });
     updated = true;
 

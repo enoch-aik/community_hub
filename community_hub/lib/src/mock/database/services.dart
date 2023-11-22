@@ -1,6 +1,7 @@
 import 'package:community_hub/app/dashboard/data/models/community_service.dart';
 import 'package:community_hub/src/res/assets/assets.dart';
 import 'package:community_hub/app/dashboard/data/models/booking.dart';
+import 'package:flutter/material.dart';
 
 class LocalDbWorker {
   final int id;
@@ -34,6 +35,19 @@ class LocalDbWorker {
     service ??= '';
     fromLocalDb ??= true;
     profilePic ??= AppAssets.getAvatarImg(id);
+  }
+
+  List<DateTimeRange> get scheduleRangeList =>
+      bookings?.map((e) => e.toDateTimeRange).toList() ?? [];
+
+  List<Booking> get upcomingAppointments => bookings!
+      .where((element) => element.bookingStart!.isAfter(DateTime.now()))
+      .toList();
+
+  //check if a userId has booked an upcoming appointment
+
+  bool hasPatientBookedPreviously(String patientId) {
+    return upcomingAppointments.any((element) => element.clientId == patientId);
   }
 }
 

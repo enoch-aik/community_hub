@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:community_hub/app/auth/data/models/new_client.dart';
 import 'package:community_hub/app/auth/data/models/new_worker.dart';
 import 'package:community_hub/app/auth/providers.dart';
@@ -8,6 +10,7 @@ import 'package:community_hub/core/validators/text_field_validators.dart';
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/router/navigator.dart';
 import 'package:community_hub/src/router/router.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 @RoutePage(name: 'workerSignup')
 class WorkerSignupScreen extends HookConsumerWidget {
@@ -111,11 +114,15 @@ class WorkerSignupScreen extends HookConsumerWidget {
                   if (_formKey.currentState!.validate()) {
                     Loader.show(context);
 
+                    String? fcmToken = '';
+                    if (Platform.isAndroid) {
+                      fcmToken = await FirebaseMessaging.instance.getToken();
+                    }
                     NewWorker worker = NewWorker(
                         fullName: fullNameController.text,
                         emailAddress: emailController.text,
                         password: passwordController.text,
-                        fcmToken: '',
+                        fcmToken: fcmToken,
                         service: service.value!.service);
 
                     final result = await auth.workerSignUp(worker);
