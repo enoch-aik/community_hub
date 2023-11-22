@@ -1,3 +1,4 @@
+import 'package:community_hub/core/dependency_injection/di_providers.dart';
 import 'package:community_hub/core/services/notification/notification.dart';
 import 'package:community_hub/lib.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,17 +17,20 @@ Future<void> _backgroundHandler(RemoteMessage message) async {
   FlutterLocalNotificationsPlugin notificationsPlugin =
       FlutterLocalNotificationsPlugin();
   await notificationsPlugin.show(
-      1,
-      message.notification!.title,
-      message.notification!.body,
-      const NotificationDetails(
-          android: AndroidNotificationDetails('noti', 'noti',
-              priority: Priority.max,
-              importance: Importance.max,
-              enableVibration: true,
-              // sound: RawResourceAndroidNotificationSound('bell_tick'),
-              // icon: '@mipmap/ic_launcher',
-              channelDescription: 'noti')));
+    1,
+    message.notification!.title,
+    message.notification!.body,
+    const NotificationDetails(
+      android: AndroidNotificationDetails(
+        'noti',
+        'noti',
+        priority: Priority.max,
+        importance: Importance.max,
+        enableVibration: true,
+        channelDescription: 'noti',
+      ),
+    ),
+  );
 }
 
 late final FirebaseApp app;
@@ -51,7 +55,36 @@ void main() async {
   //initialize notification service and check for initial message, background message and foreground message
   NotificationService.initialize();
   await NotificationService.requestPermission();
+  await initialMessage();
+  await messageOpened();
+  onMessage();
+  runApp(ProviderScope(overrides: [
+    firebaseAppProvider.overrideWith((ref) => app),
+    firebaseAuthProvider.overrideWith((ref) => auth)
+  ], child: const MyApp()));
+}
 
-  runApp(const ProviderScope(child: MyApp()));
+void onMessage() {
+  FirebaseMessaging.onMessage.listen((event) {
+    NotificationService.showNotificationOnForeground(event);
+    print(
+        '${event.notification!.title} ${event.notification!.body} I am coming from foreground');
+  });
+}
 
+Future<void> initialMessage() async {
+  // Terminated State
+  await FirebaseMessaging.instance.getInitialMessage().then((event) {
+    if (event != null) {
+      print(
+          "${event.notification!.title} ${event.notification!.body} I am coming from terminated state");
+    }
+  });
+}
+
+Future<void> messageOpened() async {
+  FirebaseMessaging.onMessageOpenedApp.listen((event) {
+    print(
+        "${event.notification!.title} ${event.notification!.body} I am coming from background");
+  });
 }

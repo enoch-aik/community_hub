@@ -22,18 +22,18 @@ class BookingDataSourceImpl extends BookingDataSource {
       required String clientEmail}) async {
     bool updated = false;
     //update doctors' appointment
-    DocumentReference doctorDbRef =
-        firestore.collection('doctors').doc(worker.email);
+    DocumentReference workerDbRef =
+        firestore.collection('workers').doc(worker.email);
     //update patient's appointment
-    DocumentReference patientDbRef =
-        firestore.collection('patients').doc(clientEmail);
+    DocumentReference clientDbRef =
+        firestore.collection('clients').doc(clientEmail);
 
     Client client = await firebaseApi.getClientData(clientEmail);
-    await patientDbRef.update({
+    await clientDbRef.update({
       'appointments':
           [booking, ...client.bookings].map((e) => e.toJson()).toList()
     });
-    await doctorDbRef.update({
+    await workerDbRef.update({
       'appointments':
           [booking, ...?worker.bookings].map((e) => e.toJson()).toList()
     });
@@ -42,7 +42,7 @@ class BookingDataSourceImpl extends BookingDataSource {
     //send notification to doctor
     try {
       await fcmService.sendNotification(
-          recipientFCMToken: worker.fcmToken!,
+          recipientFCMToken: worker.fcmToken ?? '',
           body:
               '${booking.clientName} just booked an appointment with you ${booking.toDateTimeRange.formatToInfoDateTime()}',
           title: 'You have a new appointment!');
@@ -50,5 +50,4 @@ class BookingDataSourceImpl extends BookingDataSource {
 
     return updated;
   }
-
 }
