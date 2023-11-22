@@ -83,6 +83,7 @@ dependencies:
   flutter_local_notifications: ^15.1.1
   equatable: ^2.0.5
   add_2_calendar: ^2.2.5
+  syncfusion_flutter_calendar: ^23.1.36
 
 
   #encryptoion and unique ID

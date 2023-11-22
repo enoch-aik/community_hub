@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:community_hub/app/auth/data/models/client.dart';
 import 'package:community_hub/app/auth/data/models/worker.dart';
 import 'package:community_hub/app/dashboard/data/data_source/booking_datasource.dart';
 import 'package:community_hub/app/dashboard/data/data_source/booking_datasource_impl.dart';
@@ -14,6 +15,18 @@ final acRepairListStreamProvider = StreamProvider<List<Worker>>((ref) {
       .snapshots()
       .map((querySnapshot) {
     return querySnapshot.docs.map((e) => Worker.fromJson(e.data())).toList();
+  });
+});
+
+/// patient data stream provider
+final clientBookingStreamProvider =
+    StreamProvider.family<Client, String>((ref, email) {
+  return FirebaseFirestore.instance
+      .collection('clients')
+      .doc(email)
+      .snapshots()
+      .map((querySnapshot) {
+    return Client.fromJson(querySnapshot.data()!);
   });
 });
 
