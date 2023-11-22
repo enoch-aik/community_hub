@@ -3,15 +3,15 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/community_hub/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/community_hub/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/community_hub/build" />
       <excludeFolder url="file://$MODULE_DIR$/community_hub_client/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/community_hub_client/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/community_hub_client/build" />
       <excludeFolder url="file://$MODULE_DIR$/community_hub_server/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/community_hub_server/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/community_hub_server/build" />
+      <excludeFolder url="file://$MODULE_DIR$/community_hub_flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/community_hub_flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/community_hub_flutter/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
