@@ -22,4 +22,4 @@ final bookingDataSourceProvider = Provider<BookingDataSource>((ref) {
       ref.read(firebaseApiProvider), ref.read(fcmServiceProvider));
 });
 final bookingRepoProvider = Provider<BookingRepo>(
-        (ref) => BookingRepoImpl(ref.read(bookingDataSourceProvider)));
+    (ref) => BookingRepoImpl(ref.read(bookingDataSourceProvider)));

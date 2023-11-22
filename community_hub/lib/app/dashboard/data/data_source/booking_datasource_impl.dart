@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:community_hub/app/auth/data/models/client.dart';
 import 'package:community_hub/app/dashboard/data/models/booking.dart';
+import 'package:community_hub/core/api/fcm.dart';
 import 'package:community_hub/core/api/firebase.dart';
 import 'package:community_hub/src/extensions/date_range.dart';
 import 'package:community_hub/src/mock/database/services.dart';
@@ -10,8 +11,7 @@ import 'booking_datasource.dart';
 class BookingDataSourceImpl extends BookingDataSource {
   final FirebaseFirestore firestore;
   final FirebaseApi firebaseApi;
-
-  //final FCMService fcmService;
+  final FCMService fcmService;
 
   BookingDataSourceImpl(this.firestore, this.firebaseApi, this.fcmService);
 
