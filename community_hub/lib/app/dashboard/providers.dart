@@ -18,11 +18,23 @@ final acRepairListStreamProvider = StreamProvider<List<Worker>>((ref) {
   });
 });
 
-/// patient data stream provider
+/// client data stream provider
 final clientBookingStreamProvider =
     StreamProvider.family<Client, String>((ref, email) {
   return FirebaseFirestore.instance
       .collection('clients')
+      .doc(email)
+      .snapshots()
+      .map((querySnapshot) {
+    return Client.fromJson(querySnapshot.data()!);
+  });
+});
+
+/// worker data stream provider
+final workerBookingStreamProvider =
+    StreamProvider.family<Client, String>((ref, email) {
+  return FirebaseFirestore.instance
+      .collection('workers')
       .doc(email)
       .snapshots()
       .map((querySnapshot) {

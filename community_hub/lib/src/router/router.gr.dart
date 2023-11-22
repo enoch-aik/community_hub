@@ -43,10 +43,22 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ClientBookingScreen(),
       );
     },
+    ClientCalendar.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ClientCalendarScreen(),
+      );
+    },
     ClientSignup.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ClientSignupScreen(),
+      );
+    },
+    DashboardMap.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const DashboardMapScreen(),
       );
     },
     Dashboard.name: (routeData) {
@@ -201,6 +213,20 @@ class ClientBooking extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [ClientCalendarScreen]
+class ClientCalendar extends PageRouteInfo<void> {
+  const ClientCalendar({List<PageRouteInfo>? children})
+      : super(
+          ClientCalendar.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ClientCalendar';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [ClientSignupScreen]
 class ClientSignup extends PageRouteInfo<void> {
   const ClientSignup({List<PageRouteInfo>? children})
@@ -210,6 +236,20 @@ class ClientSignup extends PageRouteInfo<void> {
         );
 
   static const String name = 'ClientSignup';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [DashboardMapScreen]
+class DashboardMap extends PageRouteInfo<void> {
+  const DashboardMap({List<PageRouteInfo>? children})
+      : super(
+          DashboardMap.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DashboardMap';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

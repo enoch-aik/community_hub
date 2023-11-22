@@ -1,5 +1,6 @@
 import 'package:community_hub/app/dashboard/data/models/community_service.dart';
 import 'package:community_hub/app/dashboard/data/models/offer.dart';
+import 'package:community_hub/app/dashboard/presentation/ui/screens/map.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/widgets/category_header.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/widgets/cleaning_service_card.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/widgets/offer_card.dart';
@@ -22,6 +23,9 @@ class DashboardScreen extends HookConsumerWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        actions: [IconButton(onPressed: () {
+AppNavigator.of(context).push(const DashboardMap());
+        }, icon: Icon(Icons.map_rounded))],
       ),
       drawer: const Drawer(),
       body: ListView(
@@ -55,7 +59,8 @@ class DashboardScreen extends HookConsumerWidget {
                       onTap: () {
                         if (CommunityService.services[e].type ==
                             CommunityServiceType.ac) {
-                          AppNavigator.of(context).push(const AcRepairServiceList());
+                          AppNavigator.of(context)
+                              .push(const AcRepairServiceList());
                         } else if (CommunityService.services[e].type ==
                             CommunityServiceType.beauty) {
                           AppNavigator.of(context).push(

@@ -23,7 +23,7 @@ extension BookingList on List<Booking> {
     return map((e) => CustomBooking(
           booking: e,
           subject:
-              'Appointment with ${isWorker ? e.clientName ?? 'a Client' : e.workerName!}',
+              'You have a booking with ${isWorker ? e.clientName ?? 'a Client' : e.workerName!}',
           startTime: e.bookingStart!,
           endTime: e.bookingEnd!,
           notes: '',

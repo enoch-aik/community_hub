@@ -3,6 +3,7 @@ import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/res/assets/assets.dart';
 import 'package:community_hub/src/router/navigator.dart';
 import 'package:community_hub/src/router/router.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 @RoutePage(name: 'splash')
 class SplashScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   void redirect() {
-    Future.delayed(const Duration(seconds: 3), () async {
+    Future.delayed(const Duration(milliseconds: 2500), () async {
       AppNavigator.of(context).replace(const Onboarding());
     });
   }
@@ -30,7 +31,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: context.primary,
       body: Center(
-        child: SvgPicture.asset(AppAssets.logoSvg),
+        child: SvgPicture.asset(AppAssets.logoSvg)
+            .animate(onPlay: (controller) => controller.repeat())
+            .fade(
+              duration: const Duration(seconds: 1),
+            ),
       ),
     );
   }

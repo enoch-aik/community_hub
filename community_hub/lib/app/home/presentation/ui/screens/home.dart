@@ -1,5 +1,6 @@
 import 'package:community_hub/app/bookings/presentation/ui/screens/client_booking.dart';
 import 'package:community_hub/app/calendar/presentation/ui/screens/client_calendar.dart';
+import 'package:community_hub/app/calendar/presentation/ui/screens/worker_calendar.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/screens/dashboard.dart';
 import 'package:community_hub/app/home/providers.dart';
 import 'package:community_hub/app/profile/presentation/ui/screens/profile.dart';
@@ -15,12 +16,11 @@ class HomeScreen extends ConsumerWidget {
     List<Widget> clientBody = const [
       DashboardScreen(),
       ClientCalendarScreen(),
-      // ClientBookingScreen(),
       ProfileScreen(),
     ];
 
     List<Widget> workerBody = const [
-      ClientCalendarScreen(),
+      WorkerCalendarScreen(),
       ProfileScreen(),
     ];
 
@@ -35,7 +35,12 @@ class HomeScreen extends ConsumerWidget {
             highlightColor: Colors.transparent),
         child: BottomNavigationBar(
           onTap: (index) {
-            ref.read(clientSelectedIndexProvider.notifier).state = index;
+            if (ref.watch(userTypeProvider)) {
+              ref.read(clientSelectedIndexProvider.notifier).state = index;
+            } else {
+              ref.read(workerSelectedIndexProvider.notifier).state = index;
+            }
+           // ref.read(clientSelectedIndexProvider.notifier).state = index;
           },
           currentIndex: ref.watch(userTypeProvider)
               ? ref.watch(clientSelectedIndexProvider)
