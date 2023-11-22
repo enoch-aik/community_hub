@@ -7,9 +7,10 @@ import 'package:community_hub/src/router/router.dart';
 
 @RoutePage(name: 'serviceDetails')
 class ServiceDetailsScreen extends StatelessWidget {
-  final Worker worker;
+  final LocalDbWorker worker;
 
-  const ServiceDetailsScreen({super.key, required this.worker});
+  const ServiceDetailsScreen(
+      {super.key, required this.worker, });
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +123,7 @@ class ServiceDetailsScreen extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 16.h, right: 16.w, left: 16.w),
           child: FilledButton(
               onPressed: () {
-                AppNavigator.of(context).push(const BookService());
+                AppNavigator.of(context).push(BookService(worker: worker));
               },
               child: const Text('Book Now')),
         ),

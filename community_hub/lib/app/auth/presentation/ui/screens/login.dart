@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:community_hub/app/auth/data/models/new_client.dart';
 import 'package:community_hub/app/auth/domain/params/user_credentials.dart';
 import 'package:community_hub/app/auth/presentation/ui/modals/choose_user_type.dart';
@@ -9,6 +11,7 @@ import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/res/assets/assets.dart';
 import 'package:community_hub/src/router/navigator.dart';
 import 'package:community_hub/src/router/router.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/gestures.dart';
 
 @RoutePage(name: 'login')
@@ -139,11 +142,16 @@ class LoginScreen extends HookConsumerWidget {
                     final firebaseApi = ref.read(firebaseApiProvider);
                     bool exists =
                         await firebaseApi.getClient(data.user?.email ?? '');
+                    String? fcmToken = '';
+                    if (Platform.isAndroid) {
+                      fcmToken = await FirebaseMessaging.instance.getToken();
+                    }
                     if (!exists) {
                       final user = NewClient(
                           fullName: data.user?.displayName ?? '',
                           emailAddress: data.user?.email ?? '',
                           password: '',
+                          fcmToken: fcmToken,
                           userId: data.user?.uid ?? '');
                       await firebaseApi.storeClientData(
                           newUser: user, credential: data);
@@ -180,7 +188,8 @@ class LoginScreen extends HookConsumerWidget {
                   const TextSpan(text: 'Don\'t have an account?  '),
                   TextSpan(
                       text: 'Signup',
-                      style: const TextStyle().copyWith(fontWeight: FontWeight.w500))
+                      style: const TextStyle()
+                          .copyWith(fontWeight: FontWeight.w500))
                 ]),
                 textAlign: TextAlign.center,
                 style: TextStyle().copyWith(fontSize: 15.sp),

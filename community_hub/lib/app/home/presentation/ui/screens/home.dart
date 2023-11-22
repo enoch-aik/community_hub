@@ -1,4 +1,6 @@
 import 'package:community_hub/app/bookings/presentation/ui/screens/client_booking.dart';
+import 'package:community_hub/app/calendar/presentation/ui/screens/client_calendar.dart';
+import 'package:community_hub/app/calendar/presentation/ui/screens/worker_calendar.dart';
 import 'package:community_hub/app/dashboard/presentation/ui/screens/dashboard.dart';
 import 'package:community_hub/app/home/providers.dart';
 import 'package:community_hub/app/profile/presentation/ui/screens/profile.dart';
@@ -11,14 +13,21 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<Widget> body = const [
+    List<Widget> clientBody = const [
       DashboardScreen(),
-      ClientBookingScreen(),
+      ClientCalendarScreen(),
+      ProfileScreen(),
+    ];
+
+    List<Widget> workerBody = const [
+      WorkerCalendarScreen(),
       ProfileScreen(),
     ];
 
     return Scaffold(
-      body: body[ref.watch(clientSelectedIndexProvider)],
+      body: ref.watch(userTypeProvider)
+          ? clientBody[ref.watch(clientSelectedIndexProvider)]
+          : workerBody[ref.watch(workerSelectedIndexProvider)],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
             splashFactory: NoSplash.splashFactory,
@@ -26,10 +35,17 @@ class HomeScreen extends ConsumerWidget {
             highlightColor: Colors.transparent),
         child: BottomNavigationBar(
           onTap: (index) {
-            ref.read(clientSelectedIndexProvider.notifier).state = index;
+            if (ref.watch(userTypeProvider)) {
+              ref.read(clientSelectedIndexProvider.notifier).state = index;
+            } else {
+              ref.read(workerSelectedIndexProvider.notifier).state = index;
+            }
+           // ref.read(clientSelectedIndexProvider.notifier).state = index;
           },
-          currentIndex: ref.watch(clientSelectedIndexProvider),
-          items: navItems,
+          currentIndex: ref.watch(userTypeProvider)
+              ? ref.watch(clientSelectedIndexProvider)
+              : ref.watch(workerSelectedIndexProvider),
+          items: ref.watch(userTypeProvider) ? clientNavItems : workerNavItems,
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,
@@ -39,11 +55,22 @@ class HomeScreen extends ConsumerWidget {
   }
 }
 
-const List<BottomNavigationBarItem> navItems = [
+const List<BottomNavigationBarItem> clientNavItems = [
   BottomNavigationBarItem(
     icon: Icon(BottomNavIcons.home),
     label: 'Home',
   ),
+  BottomNavigationBarItem(
+    icon: Icon(BottomNavIcons.calendar),
+    label: 'Calendar',
+  ),
+  BottomNavigationBarItem(
+    icon: Icon(BottomNavIcons.profile),
+    label: 'Profile',
+  ),
+];
+
+const List<BottomNavigationBarItem> workerNavItems = [
   BottomNavigationBarItem(
     icon: Icon(BottomNavIcons.calendar),
     label: 'Calendar',

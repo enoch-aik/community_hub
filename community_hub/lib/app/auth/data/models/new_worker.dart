@@ -10,18 +10,18 @@ class NewWorker {
   final String emailAddress;
   final String password;
   String? userId;
-  final String speciality;
+  final String service;
   final bool isApproved;
-  final List<Booking> appointments;
+  final List<Booking> bookings;
   final String? fcmToken;
 
   NewWorker(
       {required this.fullName,
       required this.emailAddress,
       required this.password,
-      this.appointments = const [],
+      this.bookings = const [],
       this.isApproved = false,
-      required this.speciality,
+      required this.service,
       this.fcmToken,
       this.userId});
 
@@ -35,6 +35,6 @@ class NewWorker {
       emailAddress: emailAddress,
       userId: userId,
       fcmToken: fcmToken,
-      appointments: [],
-      service: speciality);
+      bookings: [],
+      service: service);
 }

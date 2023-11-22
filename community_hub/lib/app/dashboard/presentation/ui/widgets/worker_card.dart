@@ -4,7 +4,7 @@ import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/mock/database/services.dart';
 
 class WorkerCard extends StatelessWidget {
-  final Worker worker;
+  final LocalDbWorker worker;
   final void Function()? onTap;
 
   const WorkerCard({super.key, required this.worker, this.onTap});

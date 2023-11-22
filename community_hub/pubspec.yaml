@@ -79,7 +79,11 @@ dependencies:
   firebase_auth: ^4.9.0
   cloud_firestore: ^4.9.1
   google_sign_in: ^6.1.5
+  firebase_messaging: ^14.6.7
+  flutter_local_notifications: ^15.1.1
   equatable: ^2.0.5
+  add_2_calendar: ^2.2.5
+  syncfusion_flutter_calendar: ^23.1.36
 
 
   #encryptoion and unique ID
@@ -91,6 +95,7 @@ dependencies:
   #others
   decimal: ^2.3.3
   local_auth: ^2.1.7
+  google_maps_flutter: ^2.5.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

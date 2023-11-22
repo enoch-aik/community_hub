@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:community_hub/app/auth/data/models/new_client.dart';
 import 'package:community_hub/app/auth/providers.dart';
 import 'package:community_hub/core/dependency_injection/di_providers.dart';
@@ -6,6 +8,7 @@ import 'package:community_hub/core/validators/text_field_validators.dart';
 import 'package:community_hub/lib.dart';
 import 'package:community_hub/src/router/navigator.dart';
 import 'package:community_hub/src/router/router.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 @RoutePage(name: 'clientSignup')
 class ClientSignupScreen extends HookConsumerWidget {
@@ -95,12 +98,14 @@ class ClientSignupScreen extends HookConsumerWidget {
                   if (_formKey.currentState!.validate()) {
 
                     Loader.show(context);
-                    //get fcmToken
-
+                    String? fcmToken = '';
+                    if (Platform.isAndroid) {
+                      fcmToken = await FirebaseMessaging.instance.getToken();
+                    }
                     NewClient user = NewClient(
                         fullName: fullNameController.text.trim(),
                         emailAddress: emailController.text,
-                        fcmToken: '',
+                        fcmToken: fcmToken,
                         password: passwordController.text);
                     final result = await auth.signUpWithEmailAndPassword(user);
 
