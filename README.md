@@ -7,29 +7,6 @@
 Design Credit: (https://www.figma.com/file/5fsoomMbg1nbIkBgsFeDaD/DoorHub-UI-KIt--Figma-Community-(Community))
 
 
-## 📱 Features:
-- ### Client
-- [ ] Google Maps
-- [ ] In-app purchase
-- [ ] App Wallet
-- [ ] View Profile
-- [ ] View Settings
-- [x] Authentication & Google Sign In
-- [x] View Worker's Profile
-- [x] Search and view different services
-- [x] Book Service
-- [x] Add booking to Calendar
-- [x] Push Notifications
-- [x] Calendar schedule view
-
-
-
-- ### Worker
-- [x] Authentication
-- [x] View upcoming bookings
-- [x] Push Notifications
-- [x] Calendar schedule view
-
 ## 📸 Screenshots
 
 ### Light
@@ -70,6 +47,29 @@ Design Credit: (https://www.figma.com/file/5fsoomMbg1nbIkBgsFeDaD/DoorHub-UI-KIt
 | 10                                              |
 |-------------------------------------------------|
 | <img src="screenshots/dark/10.PNG" width="145"> |
+
+## 📱 Features:
+- ### Client
+- [ ] Google Maps
+- [ ] In-app purchase
+- [ ] App Wallet
+- [ ] View Profile
+- [ ] View Settings
+- [x] Authentication & Google Sign In
+- [x] View Worker's Profile
+- [x] Search and view different services
+- [x] Book Service
+- [x] Add booking to Calendar
+- [x] Push Notifications
+- [x] Calendar schedule view
+
+
+
+- ### Worker
+- [x] Authentication
+- [x] View upcoming bookings
+- [x] Push Notifications
+- [x] Calendar schedule view
 
 ## Packages & Libraries Used
 
